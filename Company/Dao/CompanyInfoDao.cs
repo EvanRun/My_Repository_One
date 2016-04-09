@@ -7,9 +7,6 @@ using System.Web;
 
 namespace Company.Dao
 {
-    /// <summary>
-    /// 公司信息DAO
-    /// </summary>
     public class CompanyInfoDao
     {
         public static string conStr = SqlHelper.GetConnString();
@@ -22,11 +19,8 @@ namespace Company.Dao
             List<CompanyInfo> list = new List<CompanyInfo>();
             string sqlstr = "select * from tab_CompanyInfo where 1=1";
             DataSet ds = SqlHelper.ExecuteDataset(conStr, CommandType.Text, sqlstr);
-            for (int i = 0; i < ds.Tables.Count; i++)
-            {
-                
-                
-            }
+
+
             return list;
         }
     }
