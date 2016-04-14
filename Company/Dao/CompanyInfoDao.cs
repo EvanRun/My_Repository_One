@@ -19,11 +19,7 @@ namespace Company.Dao
             List<CompanyInfo> list = new List<CompanyInfo>();
             string sqlstr = "select * from tab_CompanyInfo where 1=1";
             DataSet ds = SqlHelper.ExecuteDataset(conStr, CommandType.Text, sqlstr);
-            for (int i = 0; i < list.Count; i++)
-            {
-                
-            }
-
+            list.ConvertTableToList(ds.Tables[0]);
             return list;
         }
     }

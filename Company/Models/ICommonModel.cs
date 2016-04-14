@@ -15,7 +15,7 @@ namespace Company.Models
     {
         public static void ConvertTableToList<T>(this List<T> list, DataTable table) where T : ICommonModel, new()
         {
-            if (table != null && table.Rows.Count > 0) return;
+            if (table == null || table.Rows.Count <= 0) return;
             foreach (DataRow row in table.Rows)
             {
                 T t = new T();
