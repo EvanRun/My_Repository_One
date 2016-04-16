@@ -1,6 +1,12 @@
-﻿
+﻿@using Company.Models
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    System.Data.DataSet ds = Model;
+    var row=ds.Tables[0].Rows[0];
 }
 <div id="bd">
     <div id="homepg" class="bd-inner">
@@ -15,7 +21,7 @@
                         </div>
                         <div class="block-content clearfix">
                             <div class="content-text">
-                                <p> <img alt="" align="left" src="~/images/0411405393092721.gif" width="169" height="111">杭州某某办公家具公司是一家系统办公家具公司，系统是产品齐全，系统是服务全程，节约客户宝贵时间，勇担责任，引导客户做出合理决策。本公司主要生产课桌椅、阶梯椅、剧场椅、橱柜，餐桌、屏风、钢架床，学生公寓家俱，办公家俱等。产品适用于政府机关、学校、宾馆、酒店、家庭厨房，医院、银行等。公司拥有高效的团队，科学的管理，先进的设备，完美的设计，结合优质的材料，…… </p>
+                                <p> <img alt="" align="left" src="~/images/0411405393092721.gif" width="169" height="111">@row["ComIntrod"]</p>
                             </div>
                         </div>
                         <div class="block-foot">
