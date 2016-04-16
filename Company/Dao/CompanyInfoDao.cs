@@ -14,13 +14,11 @@ namespace Company.Dao
         /// 查询所有信息
         /// </summary>
         /// <returns></returns>
-        public List<CompanyInfo> SelectCompanyInfo()
+        public DataSet SelectCompanyInfo()
         {
-            List<CompanyInfo> list = new List<CompanyInfo>();
             string sqlstr = "select * from tab_CompanyInfo where 1=1";
             DataSet ds = SqlHelper.ExecuteDataset(conStr, CommandType.Text, sqlstr);
-            list.ConvertTableToList(ds.Tables[0]);
-            return list;
+            return ds;
         }
     }
 }

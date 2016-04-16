@@ -1,6 +1,8 @@
 ﻿using Company.Dao;
+using Company.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,8 +15,8 @@ namespace Company.Controllers
         
         public ActionResult Index()
         {
-            com.SelectCompanyInfo();
-            return View();
+            DataSet ds = com.SelectCompanyInfo();
+            return View(ds);
         }
     }
 }
